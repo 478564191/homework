@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>派息管理列表</title>
+	    <meta name="keywords" content="">
+	    <meta name="description" content="">
+		<link rel="stylesheet" href="css/layui.css">
+		<link rel="stylesheet" href="css/product.css" />
+	</head>
+	<body>
+		<div class = "dividend_management">
+			<h2 class = "dif_title">派息管理列表</h2>
+			<div class = "dividend_table">
+				<form class="layui-form search_form" action="">
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">客户名称：</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required|name" autocomplete="off" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">基金名称：</label>
+							<div class="layui-input-inline">
+								<select name="quiz">
+									<option value="前海阳鸿四号">前海阳鸿四号</option>
+									<option value="前海阳鸿四号">前海阳鸿四号</option>
+								</select>
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">状态：</label>
+							<div class="layui-input-inline">
+								<select name="quiz">
+									<option value="全部">全部</option>
+									<option value="已结算">已结算</option>
+									<option value="未结算">未结算</option>
+								</select>
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">结算时间：</label>
+							<div class="layui-input-inline" style="width: 110px;">
+								<input type="text" class="layui-input" id="time1" placeholder="yyyy-MM-dd">
+							</div>
+							<div class="layui-form-mid">-</div>
+							<div class="layui-input-inline" style="width: 110px;">
+								<input type="text" class="layui-input" id="time2" placeholder="yyyy-MM-dd">
+							</div>
+						</div>
+					;</div>
+				</form>
+				<div style="overflow:hidden;">
+					<div style="float:left;">
+						<button class="layui-btn layui-btn-ms add">导出</button>
+						<button class="layui-btn layui-btn-warm layui-btn-ms daochu">批量结算</button>
+					</div>
+					<div style="float:right;">
+						<button class="layui-btn layui-btn-normal">查询</button>
+					</div>
+				</div>
+				<table class="layui-hide" id="dividend_management" lay-filter="test"></table>
+			</div>
+		</div>
+		<script type="text/html" id="barDemo">
+			<a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit" id="edit">编辑</a>
+			<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="settlement">结算</a>
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/layui.v2.4.5/layui.js"></script>
+		<script>
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function() {
+				var laydate = layui.laydate, //日期
+					form = layui.form,
+					laypage = layui.laypage, //分页
+					layer = layui.layer, //弹层
+					table = layui.table, //表格
+					carousel = layui.carousel, //轮播
+					upload = layui.upload, //上传
+					element = layui.element, //元素操作
+					slider = layui.slider //滑块
+					
+				laydate.render({
+					elem: '#time1',
+				});
+				laydate.render({
+					elem: '#time2',
+					trigger: 'click'
+				});
+				
+				table.on('tool(test)', function(obj) { 
+					var data = obj.data, 
+						layEvent = obj.event; 
+					if(layEvent === 'edit') {
+						layer.open({
+					      	type: 2,
+				     	 	title: '派息详情编辑',
+					      	maxmin: true,
+					      	shadeClose: true, 
+					      	area : ['1000px','600px'],
+					      	content: 'payout_detail.html'
+					    });
+					} else if(layEvent === 'settlement'){
+						layer.msg("点击了结算按钮")
+					}
+				});
+				
+				//执行一个 table 实例
+				table.render({
+					elem: '#dividend_management',
+					height: 320,
+					url: 'json/dividend_management.json',
+					title: '用户表',
+					page: true, 
+					toolbar: 'default', 
+					totalRow: true, 
+					cols: [
+						[
+							{
+								type: 'checkbox',
+								align: 'center',
+								fixed: 'left'
+							}, {
+								field: 'name',
+								title: '姓名',
+								align: 'center',
+								width: 120,
+								totalRowText: '合计：'
+							}, {
+								field: 'fundName',
+								title: '基金名称',
+								align: 'center',
+								width: 180
+							}, {
+								field: 'Settlement',
+								title: '结算批次',
+								width: 120,
+								align: 'center',
+								sort: true
+							}, {
+								field: 'earnings',
+								title: '结算收益',
+								width: 150,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'Capital',
+								title: '结算出资额',
+								width: 150,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'managementFee',
+								title: '管理费',
+								width: 140,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'subtotal',
+								title: '小计',
+								width: 140,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'days',
+								title: '结算天数',
+								width: 180,
+								align: 'center',
+								sort: true
+							}, {
+								field: 'date',
+								title: '结算日',
+								width: 180,
+								align: 'center',
+								sort: true
+							}, {
+								field: 'actualDate',
+								title: '实际结算日',
+								width: 140,
+								align: 'center',
+								sort: true
+							}, {
+								field: 'settlementState',
+								title: '状态',
+								width: 140,
+								align: 'center',
+								sort: true
+							},{
+								title: '操作',
+								fixed: 'right',
+								width: 200,
+								align: 'center',
+								toolbar: '#barDemo'
+							}
+						]
+					]
+				});
+			})
+		</script>
+	</body>
+</html>

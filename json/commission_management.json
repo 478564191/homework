@@ -1,0 +1,76 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [
+		{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		},
+		{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		},
+		{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		},{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		},{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		},{
+			"name": "张三",
+			"company": "广州分公司",
+			"department": "财富一部",
+			"position": "业务经理",
+			"superior": "李四",
+			"fundName": "前海阳鸿四号",
+			"royaltyRate" : "6.0%",
+			"moneyBefore" : "4000",
+			"moneyAfter" : "3600",
+			"balance" : "0"
+		}
+	]
+}

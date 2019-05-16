@@ -1,0 +1,82 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [
+		{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "1",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "16天",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "已结算"
+		},
+		{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "2",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "一个自然月",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "已结算"
+		},
+		{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "3",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "一个自然月",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "未结算"
+		},{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "4",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "一个自然月",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "已结算"
+		},{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "5",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "一个自然月",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "未结算"
+		},{
+			"name": "张三",
+			"fundName": "前海阳鸿四号",
+			"Settlement" : "6",
+			"earnings" : "100",
+			"Capital" : "3600",
+			"managementFee" : "0",
+			"subtotal" : "100",
+			"days" : "一个自然月",
+			"date" : "2019-5-6",
+			"actualDate" : "2019-5-6",
+			"settlementState" : "已结算"
+		}
+	]
+}

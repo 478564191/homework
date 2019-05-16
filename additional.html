@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>基金追加金额</title>
+	    <meta name="keywords" content="">
+	    <meta name="description" content="">
+	   	<link rel="stylesheet" href="css/product.css" />
+	    <link rel="stylesheet" href="css/layui.css" />
+	</head>
+	<body>
+		<div class = "additional">
+			<div class = "addition_main">
+				<div class = "addition_group">
+					<ul class = "addition_list ofw">
+						<li>
+							<label>客户名称：</label>
+							<span>张三</span>
+						</li>
+						<li>
+							<label>手机号码：</label>
+							<span>13012345678</span>
+						</li>
+						<li>
+							<label>身份证号：</label>
+							<span>123456122315698218</span>
+						</li>
+						<li>
+							<label>银行账号：</label>
+							<span>1234 5678 9012 345</span>
+						</li>
+						<li>
+							<label>银行类型：</label>
+							<span>工商银行</span>
+						</li>
+						<li>
+							<label>客户经理：</label>
+							<span>李四</span>
+						</li>
+						<li>
+							<label>产品名称：</label>
+							<span>前海阳鸿四号</span>
+						</li>
+						<li>
+							<label>产品利率：</label>
+							<span>12%</span>
+						</li>
+						<li>
+							<label>收款银行：</label>
+							<span>中国银行 1234 1235 2336 456</span>
+						</li>
+					</ul>
+					
+					<form class="layui-form addtion_form" action="">
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">追加金额：</label>
+						      	<div class="layui-input-inline">
+						        	<input autocomplete="off" class="layui-input">
+						        </div>
+						      	<div class="layui-form-label" style="width:20px;margin-left:0px;">万</div>
+						    </div>
+    					</div>
+    					<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">到账时间：</label>
+						      	<div class="layui-input-inline">
+						        	<input type="text" name="date" id="arriveTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+						      	</div>
+						    </div>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">起息时间：</label>
+						      	<div class="layui-input-inline">
+						        	<input type="text" name="date" id="startTime" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+						      	</div>
+						    </div>
+						</div>
+						<div class="layui-form-item layui-form-text">
+						    <label class="layui-form-label">备注：</label>
+						    <div class="layui-input-block" style = "margin-left:80px;">
+						      	<textarea placeholder="请输入内容" class="layui-textarea" style="resize:none;"></textarea>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-input-block" style = "margin-left:0;text-align:center;">
+						      	<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+						      	<div class = "descript">确认追加后将会重新计算年化金额及派息明细。</div>
+						    </div>
+					  	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/plugins/layui.v2.4.5/layui.js"></script>
+	<script>
+		layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function() {
+			var laydate = layui.laydate, //日期
+				form = layui.form,
+				laypage = layui.laypage, //分页
+				layer = layui.layer, //弹层
+				table = layui.table, //表格
+				carousel = layui.carousel, //轮播
+				upload = layui.upload, //上传
+				element = layui.element, //元素操作
+				slider = layui.slider //滑块
+				
+			laydate.render({
+				elem: '#arriveTime',
+			});
+			laydate.render({
+				elem: '#startTime',
+				trigger: 'click'
+			});
+		})
+	</script>
+</html>

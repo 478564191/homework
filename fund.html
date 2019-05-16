@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>基金购买管理</title>
+	    <meta name="keywords" content="">
+	    <meta name="description" content="">
+		<link rel="stylesheet" href="css/layui.css">
+		<link rel="stylesheet" href="css/product.css" />
+	</head>
+	<body>
+		<div class = "buy_control">
+			<h2 class = "dif_title">基金购买管理</h2>
+			<form class="layui-form search_form" action="" style = "margin-top:20px;">
+				<div class="layui-form-item">
+					<div class="layui-inline">
+						<label class="layui-form-label">客户名称：</label>
+						<div class="layui-input-inline">
+							<input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">手机号码：</label>
+						<div class="layui-input-inline">
+							<input type="tel" name="phone" lay-verify="required|phone" placeholder="" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">基金产品：</label>
+						<div class="layui-input-inline">
+							<input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">到账时间：</label>
+						<div class="layui-input-inline" style="width: 110px;">
+							<input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd" style="height:38px;">
+						</div>
+						<div class="layui-form-mid">-</div>
+						<div class="layui-input-inline" style="width: 110px;">
+							<input type="text" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
+						</div>
+					</div>
+	
+					<div class="layui-inline">
+						<label class="layui-form-label">客户经理：</label>
+						<div class="layui-input-inline">
+							<input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">上级：</label>
+						<div class="layui-input-inline">
+							<input type="tel" name="url" lay-verify="url" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">所属公司：</label>
+						<div class="layui-input-inline">
+							<select name="quiz">
+								<option value="">全部</option>
+								<option value="你工作的第一个城市">红隼资本</option>
+								<option value="你的工号">众金在线</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-inline">
+						<label class="layui-form-label">所属部门：</label>
+						<div class="layui-input-inline">
+							<select name="quiz">
+								<option value="">全部</option>
+								<option value="你工作的第一个城市">财富一部</option>
+								<option value="你的工号">财富二部</option>
+								<option value="你最喜欢的老师">财富三部</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div style="overflow:hidden;">
+				<div style="float:left;">
+					<button class="layui-btn layui-btn-ms add">添加</button>
+					<button class="layui-btn layui-btn-warm layui-btn-ms daochu">导出</button>
+				</div>
+				<div style="float:right;">
+					<button class="layui-btn layui-btn-normal">查询</button>
+				</div>
+			</div>
+			<table class="layui-hide" id="demo" lay-filter="test"></table>
+		</div>
+		<script type="text/html" id="barDemo">
+			<a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="edit" id="edit">编辑</a>
+			<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详情</a>
+			<a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="addition">追加</a>
+			<a class="layui-btn layui-btn-xs" lay-event="redemption">赎回</a>
+			<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="confirmLetter">确认函</a>
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/layui.v2.4.5/layui.js"></script>
+
+		<script>
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function() {
+				var laydate = layui.laydate, //日期
+					form = layui.form,
+					laypage = layui.laypage, //分页
+					layer = layui.layer, //弹层
+					table = layui.table, //表格
+					carousel = layui.carousel, //轮播
+					upload = layui.upload, //上传
+					element = layui.element, //元素操作
+					slider = layui.slider //滑块
+					
+					
+					
+				form.on('checkbox(allChoose)', function (data) {
+					$("input[name='check[]']").each(function () {
+			            this.checked = data.elem.checked;
+			        });
+			        form.render('checkbox');
+			    });
+				    
+			    form.on('checkbox(oneChoose)', function (data) {
+		            var item = $(".selectLot");
+		            for (var i = 0; i < item.length; i++) {
+		                if (item[i].checked == false) {
+		                    $("#selectAll").prop("checked", false);
+		                    form.render('checkbox');
+		                    break;
+		                }
+		            }
+		            var  all=item.length;
+		            for (var i = 0; i < item.length; i++) {
+		                if (item[i].checked == true) {
+		                    all--;
+		                }
+		            }
+		            if(all==0){
+		            	$("#selectAll").prop("checked", true);
+		            	form.render('checkbox');
+		            }
+				});
+
+				laydate.render({
+					elem: '#test1',
+				});
+				laydate.render({
+					elem: '#test2'
+				});
+				laydate.render({
+					elem: '#test3',
+				});
+				laydate.render({
+					elem: '#test4'
+				});
+				
+				
+				
+				$(".add").click(function(){
+					$(this).closest("body").find(".layer-iframe .same_input_inline input,.layer-iframe .same_input_inline textarea").val(" ");
+					if($(".dateTime1 input").val() === " "){
+						$(".dateTime1 input").parent(".dateTime1").find(".other").css("display","block");
+					};
+					if($(".dateTime2 input").val() === " "){
+						$(".dateTime2 input").parent(".dateTime2").find(".other1").css("display","block");
+					};
+					if($(".textCon textarea").val() === " "){
+						$(".textCon textarea").parent(".textCon").find(".content").css("display","block");
+					}
+				});
+				table.on('tool(test)', function(obj) {
+					var data = obj.data,
+						layEvent = obj.event;
+					if(layEvent === 'edit') {
+						layer.open({
+					      	type: 2,
+				     	 	title: '基金添加购买',
+					      	maxmin: true,
+					      	shadeClose: true,
+					      	area : ['1000px' , '600px'],
+					      	content: 'add_buy.html'
+					    });
+					} else if(layEvent === 'detail') {
+						layer.open({
+					      	type: 2,
+				     	 	title: '基金购买详情',
+					      	maxmin: true,
+					      	shadeClose: true,
+					      	area : ['1000px' , '600px'],
+					      	content: 'add_detail.html'
+					    });
+					} else if(layEvent === 'addition') {
+						layer.open({
+					      	type: 2,
+				     	 	title: '基金追加金额',
+					      	maxmin: true,
+					      	shadeClose: true,
+					      	area : ['1000px' , '600px'],
+					      	content: 'additional.html'
+					    });
+					} else if(layEvent === 'redemption') {
+						layer.open({
+					      	type: 2,
+				     	 	title: '基金赎回管理',
+					      	maxmin: true,
+					      	shadeClose: true,
+					      	area : ['1000px' , '600px'],
+					      	content: 'redemp.html'
+					    });
+					} else if(layEvent === 'confirmLetter') {
+						layer.msg('点击了确认函按钮');
+					}
+				});
+
+				//监听Tab切换
+				element.on('tab(demo)', function(data) {
+					layer.tips('切换了 ' + data.index + '：' + this.innerHTML, this, {
+						tips: 1
+					});
+				});
+
+				//执行一个 table 实例
+				table.render({
+					elem: '#demo',
+					height: 420,
+					url: 'json/data.json', //数据接口
+					title: '用户表',
+					page: true, //开启分页
+					toolbar: 'default', //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+					totalRow: true, //开启合计行
+					cols: [
+						[
+							{
+								type: 'checkbox',
+								align: 'center',
+								fixed: 'left'
+							}, {
+								field: 'username',
+								title: '客户名称',
+								align: 'center',
+								width: 100,
+								totalRowText: '合计：'
+							}, {
+								field: 'telephone',
+								title: '手机号码',
+								align: 'center',
+								width: 120
+							}, {
+								field: 'product',
+								title: '基金产品',
+								align: 'center',
+								width: 150
+							}, {
+								field: 'interest',
+								title: '年利率',
+								align: 'center',
+								width: 90,
+								sort: true
+							}, {
+								field: 'stock',
+								title: '存量金额（元）',
+								width: 150,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'annual',
+								title: '年化金额（元）',
+								width: 150,
+								align: 'center',
+								sort: true,
+								totalRow: true
+							}, {
+								field: 'time',
+								title: '期限',
+								align: 'center',
+								width: 100,
+								sort: true
+							}, {
+								field: 'customerManager',
+								title: '客户经理',
+								align: 'center',
+								width: 100,
+								sort: true
+							}, {
+								field: 'arriveTime',
+								title: '到账时间',
+								align: 'center',
+								width: 110,
+								sort: true
+							}, {
+								field: 'interestTime',
+								title: '起息时间',
+								align: 'center',
+								width: 110,
+								sort: true
+							}, {
+								field: 'dueTime',
+								title: '到期时间',
+								align: 'center',
+								width: 110,
+								sort: true
+							}, {
+								title: '操作',
+								fixed: 'right',
+								width: 300,
+								align: 'center',
+								toolbar: '#barDemo'
+							}
+						]
+					]
+				});
+
+				//将日期直接嵌套在指定容器中
+				var dateIns = laydate.render({
+					elem: '#laydateDemo',
+					position: 'static',
+					calendar: true, //是否开启公历重要节日
+					mark: { //标记重要日子
+						'0-10-14': '生日',
+						'2018-08-28': '新版',
+						'2018-10-08': '神秘'
+					},
+					done: function(value, date, endDate) {
+						if(date.year == 2017 && date.month == 11 && date.date == 30) {
+							dateIns.hint('一不小心就月底了呢');
+						}
+					},
+					change: function(value, date, endDate) {
+						layer.msg(value)
+					}
+				});
+
+				//分页
+				laypage.render({
+					elem: 'pageDemo', //分页容器的id
+					count: 100, //总页数
+					skin: '#1E9FFF', //自定义选中色值
+						//,skip: true //开启跳页
+					jump: function(obj, first) {
+						if(!first) {
+							layer.msg('第' + obj.curr + '页', {
+								offset: 'b'
+							});
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

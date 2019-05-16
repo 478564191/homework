@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>派息详情编辑</title>
+	    <meta name="keywords" content="">
+	    <meta name="description" content="">
+	   	<link rel="stylesheet" href="css/product.css" />
+	    <link rel="stylesheet" href="css/layui.css" />
+	</head>
+	<body>
+		<div class = "payout_detail">
+			<div class = "payout_main">
+				<div class = "payout_group">
+					<ul class = "payout_list ofw">
+						<li>
+							<label>客户名称：</label>
+							<span>张三</span>
+						</li>
+						<li>
+							<label>手机号码：</label>
+							<span>13012345678</span>
+						</li>
+						<li>
+							<label>身份证号：</label>
+							<span>123456122315698218</span>
+						</li>
+						<li>
+							<label>银行账号：</label>
+							<span>1234 5678 9012 345</span>
+						</li>
+						<li>
+							<label>银行类型：</label>
+							<span>工商银行</span>
+						</li>
+						<li>
+							<label>客户经理：</label>
+							<span>李四</span>
+						</li>
+						<li>
+							<label>产品名称：</label>
+							<span>前海阳鸿四号</span>
+						</li>
+						<li>
+							<label>产品利率：</label>
+							<span>12%</span>
+						</li>
+						<li>
+							<label>收款银行：</label>
+							<span>中国银行 1234 1235 2336 456</span>
+						</li>
+						<li>
+							<label>存量金额：</label>
+							<span>100万</span>
+						</li>
+						<li style = "width:66.6%;">
+							<label>年化金额：</label>
+							<span>100万</span>
+						</li>
+						<li>
+							<label>结算批次：</label>
+							<span>第一次</span>
+						</li>
+						<li>
+							<label>结算日期：</label>
+							<span>2019-5-8</span>
+						</li>
+						<li>
+							<label>结算天数：</label>
+							<span>16天</span>
+						</li>
+					</ul>
+					<form class="layui-form addtion_form" action="">
+						<div class = "mtp10" style = "margin-bottom:10px;">
+							<label>结算出资额：</label>
+							<span>1000,000.00</span>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">结算收益：</label>
+						      	<div class="layui-input-inline">
+						        	<input type = "text" name="earnings" lay-verify="required|earnings" autocomplete="off" class="layui-input">
+						        </div>
+						    </div>
+    					</div>
+    					<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label manageFee">管理费：</label>
+						      	<div class="layui-input-inline">
+						        	<input type = "text" name="earnings" lay-verify="required|earnings" autocomplete="off" class="layui-input">
+						        </div>
+						    </div>
+						</div>
+						<div class = "mtp10">
+							<label>结算总额：</label>
+							<span>1000,000.00</span>
+						</div>
+						<div class = "mtp10">
+							<label class = "state">状态：</label>
+							<span style = "margin-left:-11px;">未结算</span>
+						</div>
+						<div class="layui-form-item layui-form-text mtp10">
+						    <label class="layui-form-label">备注：</label>
+						    <div class="layui-input-block" style = "margin-left:80px;">
+						      	<textarea placeholder="请输入内容" class="layui-textarea" style="resize:none;"></textarea>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-input-block" style = "margin-left:0;text-align:center;">
+						      	<button class="layui-btn" lay-submit="" lay-filter="demo1">确定修改</button>
+						    </div>
+					  	</div>
+					</form>
+					<div class="detail_item">
+						<div class="detail_title_name">操作记录11</div>
+						<ul class="table_list ofw tableSame_list table20">
+							<li>
+								<div>时间</div>
+								<div>操作人</div>
+								<div>操作内容</div>
+							</li>
+							<li>
+								<div>2019-4-30 16:00</div>
+								<div>李四</div>
+								<div>结算收益100修改为1000</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/layui.v2.4.5/layui.js"></script>
+		<script>
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function() {
+				var laydate = layui.laydate, //日期
+					form = layui.form,
+					laypage = layui.laypage, //分页
+					layer = layui.layer, //弹层
+					table = layui.table, //表格
+					carousel = layui.carousel, //轮播
+					upload = layui.upload, //上传
+					element = layui.element, //元素操作
+					slider = layui.slider //滑块
+				
+				form.verify({
+					earnings: [
+	      				/^(([1-9][0-9]*)|(([0]\.\d{1,2}|[1-9][0-9]*\.\d{1,2})))$/,
+				      	'请输入阿拉伯数字金额'
+				    ]
+				});
+			})
+		</script>
+	</body>
+</html>

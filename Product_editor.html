@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>基金产品编辑</title>
+	    <meta name="keywords" content="">
+	    <meta name="description" content="">
+	   	<link rel="stylesheet" href="css/product.css" />
+	    <link rel="stylesheet" href="css/layui.css" />
+	</head>
+	<body>
+		<div class = "product_editor">
+			<div class = "product_main">
+				<div class = "product_group">
+					<form class="layui-form" action="">
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">基金名称：</label>
+						      	<div class="layui-input-inline">
+						        	<input type="tel" name="fundName" lay-verify="required|fundName" autocomplete="off" class="layui-input">
+						      	</div>
+						    </div>
+						</div>
+						<div class="layui-form-item">
+					    	<label class="layui-form-label">派息类型：</label>
+						    <div class="layui-input-block" style = "margin-left:80px;">
+						      	<input type="radio" name="sex" value="按月" title="按月">
+						      	<input type="radio" name="sex" value="按季" title="按季">
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">派息日期：</label>
+						      	<div class="layui-input-inline">
+						        	<select name="modules" lay-verify="required" lay-search="">
+						          		<option value="每月月底">每月月底</option>
+						          		<option value="每月28号">每月28号</option>
+							          	<option value="每月27号">每月27号</option>
+							          	<option value="每月26号">每月26号</option>
+							          	<option value="每月25号">每月25号</option>
+							          	<option value="每月24号">每月24号</option>
+							          	<option value="每月23号">每月23号</option>
+							          	<option value="每月22号">每月22号</option>
+							          	<option value="每月21号">每月21号</option>
+							          	<option value="每月20号">每月20号</option>
+							          	<option value="每月19号">每月19号</option>
+							          	<option value="每月18号">每月18号</option>
+							          	<option value="每月17号">每月17号</option>
+							          	<option value="每月16号">每月16号</option>
+							          	<option value="每月15号">每月15号</option>
+							          	<option value="每月14号">每月14号</option>
+							          	<option value="每月13号">每月13号</option>
+							          	<option value="每月12号">每月12号</option>
+							          	<option value="每月11号">每月11号</option>
+							          	<option value="每月10号">每月10号</option>
+							          	<option value="每月9号">每月9号</option>
+							          	<option value="每月8号">每月8号</option>
+							          	<option value="每月7号">每月7号</option>
+							          	<option value="每月6号">每月6号</option>
+							          	<option value="每月5号">每月5号</option>
+							          	<option value="每月4号">每月4号</option>
+							          	<option value="每月3号">每月3号</option>
+							          	<option value="每月2号">每月2号</option>
+							          	<option value="每月1号">每月1号</option>
+						        	</select>
+						      </div>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">产品利率：</label>
+						      	<div class="layui-input-inline">
+						        	<input style = "text-align:right;padding-right:10px;" type="tel" name="product" lay-verify="required|product" autocomplete="off" class="layui-input">
+						      	</div>
+						      	<label class="layui-form-label">%</label>
+						    </div>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label manageFee">管理费：</label>
+						      	<div class="layui-input-inline">
+						        	<input style = "text-align:right;padding-right:10px;" type="tel" name="product" lay-verify="required|product" autocomplete="off" class="layui-input">
+						      	</div>
+						      	<label class="layui-form-label">%</label>
+						    </div>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">提成税率：</label>
+						      	<div class="layui-input-inline">
+						        	<input style = "text-align:right;padding-right:10px;" type="tel" name="product" lay-verify="required|product" autocomplete="off" class="layui-input">
+						      	</div>
+						      	<label class="layui-form-label">%</label>
+						    </div>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-inline">
+						      	<label class="layui-form-label">销售状态：</label>
+						      	<div class="layui-input-inline">
+						        	<select name="modules" lay-verify="required" lay-search="">
+						          		<option value="在售">在售</option>
+						          		<option value="售罄">售罄</option>
+							          	<option value="停售">停售</option>
+							        </select>
+						      </div>
+						    </div>
+					  	</div>
+					  	<div class="layui-form-item layui-form-text">
+						    <label class="layui-form-label remark">备注：</label>
+						    <div class="layui-input-block" style = "margin-left:80px;">
+						      	<textarea placeholder="请输入内容" class="layui-textarea" style = "resize:none;"></textarea>
+						    </div>
+					  	</div>
+					  	
+					  	<div class = "collectMain">
+						  	<div class = "collectHead">
+						  		<div class = "collectBank">收款银行信息</div>
+						  		<input class = "addAccount" type="button" value = "添加收款账号" />
+						  	</div>
+						  	<table class="layui-table" lay-size="sm">
+							  	<thead>
+								    <tr>
+								      	<th>序号</th>
+								      	<th style = "width:20%;">银行类型</th>
+								      	<th style = "width:20%;">银行账户</th>
+								      	<th>备注</th>
+								      	<th>操作</th>
+								    </tr> 
+							  	</thead>
+							  	<tbody>
+								    <tr>
+								      	<td>1</td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><a class = "delete" href="javascript:;">删除</a></td>
+								    </tr>
+								    <tr>
+								      	<td>2</td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><a class = "delete" href="javascript:;">删除</a></td>
+								    </tr>
+								    <tr>
+								      	<td>3</td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><input type="text" class = "layui-input" /></td>
+								      	<td><a class = "delete" href="javascript:;">删除</a></td>
+								    </tr>
+							  	</tbody>
+							</table>
+						</div>
+						<div class="layui-form-item">
+						    <div class="layui-input-block" style = "margin-left:0;text-align:center;margin-top:20px;">
+						      	<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+						    </div>
+					  	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/layui.v2.4.5/layui.js"></script>
+		<script>
+			layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function() {
+				var laydate = layui.laydate, //日期
+					form = layui.form,
+					laypage = layui.laypage, //分页
+					layer = layui.layer, //弹层
+					table = layui.table, //表格
+					carousel = layui.carousel, //轮播
+					upload = layui.upload, //上传
+					element = layui.element, //元素操作
+					slider = layui.slider //滑块
+				
+				var del = $(".delete");
+				for(var i = 0;i<del.length;i++){
+					$(del[i]).click(function(){
+						$(this).addClass("shanchu")
+						layer.confirm("您确定要删除吗",{
+							btn : ["确定","取消"]
+						},	function(){
+								$(".layui-table tbody tr").each(function(){
+									if($(this).find("a").hasClass("shanchu")){
+										$(this).remove();
+									};
+								});
+								layer.msg("删除成功");
+							}
+						)
+				   })
+				}
+			});
+		</script>
+	</body>
+</html>

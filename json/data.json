@@ -1,0 +1,141 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [
+		{
+			"username": "user-0",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "12%",
+			"stock": "100",
+			"annual": "100",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-1",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "11%",
+			"stock": "200",
+			"annual": "200",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-2",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "12%",
+			"stock": "150",
+			"annual": "150",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-3",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "12%",
+			"stock": "180",
+			"annual": "180",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-4",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "14%",
+			"stock": "300",
+			"annual": "300",
+			"time": "18个月",
+			"logins": 51,
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-5",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "14%",
+			"stock": "50",
+			"annual": "50",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-6",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "12%",
+			"stock": "240",
+			"annual": "240",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-7",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "10%",
+			"stock": "170",
+			"annual": "170",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-8",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "13%",
+			"stock": "100",
+			"annual": "100",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-9",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "11%",
+			"stock": "100",
+			"annual": "100",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}, {
+			"username": "user-10",
+			"telephone":"13012345678",
+			"product": "前海阳鸿四号",
+			"interest": "12%",
+			"stock": "100",
+			"annual": "100",
+			"time": "18个月",
+			"customerManager": "张三",
+			"arriveTime": "2019-4-22",
+			"interestTime":"2019-4-22",
+			"dueTime":"2019-4-22"
+		}
+	]
+}

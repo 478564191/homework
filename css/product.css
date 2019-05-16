@@ -1,0 +1,119 @@
+a,address,b,big,blockquote,body,center,cite,code,dd,del,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,label,legend,li,ol,p,pre,small,span,strong,u,ul,var{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+table{border-collapse:collapse;border-spacing:0}
+button,html input[type=button],input[type=submit]{-webkit-apperance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+ol,ul{list-style:none}
+.fl{float:left}
+.fr{float:right}
+body{font-family:'Microsoft Yahei';background:#fff;}
+a{text-decoration:none;}
+img{display:block;}
+
+.layui-table-tool {display: none;}
+.layui-border-box {height: 270px !important;}
+.product_control,.buy_control,.customer_manager,.commission_management,.dividend_management{padding:0 100px;}
+.ofw{overflow:hidden;}
+.mtp10{margin-top:10px;}
+/*基金产品管理  start*/
+.product_control .layui-form-label{padding:9px 0;text-align:left;}
+.product_control .layui-form-item .layui-inline{margin-right:40px;}
+.product_control .control_table{padding:20px 0 50px 0;}
+.dif_title{border-bottom:1px solid #e6e6e6;padding:15px 0;color:#333;font-size:22px;font-weight:bold;}
+/*基金产品管理  end*/
+
+/*确认函模板  start*/
+.confirmLetter .content{padding:20px;color:#333;}
+.confirmLetter .content .mb15{margin-bottom:15px;}
+.confirmLetter .content .mb15 .fundName{width:80px;display:inline-block;}
+.confirmLetter .layui-modify .layui-form-label{padding:9px 0;text-align:left;}
+.confirmLetter .layui-modify .layui-input-block{margin-left:85px;}
+.confirmLetter .layui-modify .layui-textarea{resize:none;}
+.confirmLetter .submit-modify .layui-input-block{margin-left:0;text-align:center;padding-top:20px;}
+/*确认函模板  end*/
+
+/*基金添加购买  start*/
+.add_buy .layer-iframe .layui-layer-title {padding: 0 20px;}
+.add_buy .form-title .layui-form-label {padding: 9px 0;text-align: left;}
+.add_buy .form-title {border-bottom: 1px solid #e6e6e6;padding: 15px 0;}
+.add_buy .form-title:last-child {border: none;}
+.add_buy .form-title .form-title-name {color: #333;font-size: 16px;font-weight: bold;}
+.add_buy .form-title .layui-form-item {margin-top: 7px;margin-bottom: 0;}
+.add_buy .form-title .layui-input-block {margin-left: 80px;}
+.add_buy .form-title .layui-form-item .layui-inline {margin-right: 30px;}
+.add_buy .search_form .layui-form-item .layui-inline {margin-bottom: 20px;}
+.add_buy .layui-border-box {height: 370px !important;}
+.add_buy .search_form .layui-form-item {margin-bottom: 0;}
+.add_buy .search_form {padding-top: 10px;}
+/*基金添加购买  end*/
+
+/*基金购买详情  start*/
+.add_detail .detail_main,.redemp .redemp_main,.additional .addition_main,.payout_detail .payout_main,.product_editor .product_main{padding:10px 20px;color:#333;}
+.add_detail .detail_main .detail_item{border-bottom: 1px solid #e6e6e6;padding: 15px 0;}
+.add_detail .detail_main .detail_item .detail_title_name{color: #333;font-size: 16px;font-weight: bold;}
+.add_detail .detail_main .detail_item label,.additional .addition_list label,.redemp .redemp_list label,.payout_detail .payout_list label{display:inline-block;width:auto;padding-right:5px;}
+.add_detail .same_list li.wh100{width:100%;}
+.add_detail .same_list li,.redemp .redemp_list li,.additional .addition_list li,.payout_detail .payout_list li{width:33.3%;float:left;margin-top:10px;}
+.add_detail .table_list{border:1px solid #e6e6e6;border-left:none;border-right:none;margin-top:10px;}
+.add_detail .table_list li{border-bottom:1px solid #e6e6e6;overflow:hidden;padding:7px 0;}
+.add_detail .table_list li:last-child{border:none;}
+.add_detail .table_list li div{width:16.6%;float:left;text-align:center;}
+.add_detail .borderNone{border-bottom:none !important;}
+.add_detail .table_list li .note_info{outline:none;width:100%;border:none;padding-left:10px;box-sizing:border-box;resize:none;height:19px;overflow:scroll;}
+.add_detail .table_list li .note_info:focus{border:1px solid #ccc;}
+.note_info::-webkit-scrollbar {display: none;}
+/*基金购买详情  end*/
+
+/*基金追加金额  start*/
+.additional .addtion_form,.redemp .redemp_form{padding-top:25px;}
+.additional .layui-form-label,.redemp .layui-form-label,.payout_detail .layui-form-label,.product_editor .layui-form-label{padding: 9px 0;text-align: left;}
+.additional .layui-form-item .descript,.redemp .layui-form-item .descript{display:inline-block;vertical-align: bottom;color:#666;}
+/*基金追加金额  end*/
+
+/*基金赎回管理  start*/
+.redemp .ul_tab{padding-top:15px;border-bottom:1px solid #e6e6e6;}
+.redemp .ul_tab li{float:left;color:#333;width:10%;line-height:40px;text-align:center;cursor:pointer;}
+.redemp .ul_tab li span.current{color:#009ff2;border-bottom:1px solid #009ff2;}
+.redemp .ul_tab li span{display: inline-block;width: 100%;}
+/*基金赎回管理  end*/
+
+/*客户经理管理  start*/
+.customer_manager .customer_table,.commission_management .commission_table,.dividend_management .dividend_table{padding:20px 0 50px 0;}
+.customer_manager .layui-form-label,.commission_management .layui-form-label,.dividend_management .layui-form-label{padding:9px 0;text-align:left;}
+.customer_manager .layui-form-item .layui-inline,.commission_management .layui-form-item .layui-inline,.dividend_management .layui-form-item .layui-inline{margin-right:40px;}
+/*客户经理管理  end*/
+
+/*提成管理列表  start*/
+/*提成管理列表  end*/
+
+/*派息管理列表  start*/
+/*派息管理列表  end*/
+
+/*派息详情编辑  start*/
+.payout_detail .mtp10 label{display:inline-block;width:auto;padding-right:5px;}
+.payout_detail .manageFee{letter-spacing: 4.7px;}
+.payout_detail .state{letter-spacing: 14px;}
+.payout_detail .detail_item{padding: 15px 0;}
+.payout_detail .detail_item .detail_title_name{color: #333;font-size: 16px;font-weight: bold;}
+.payout_detail .table_list{border:1px solid #e6e6e6;border-left:none;border-right:none;margin-top:10px;}
+.payout_detail .table_list li{border-bottom:1px solid #e6e6e6;overflow:hidden;padding:7px 0;}
+.payout_detail .table_list li:last-child{border:none;}
+.payout_detail .table_list li div{width:27%;float:left;text-align:center;}
+/*派息详情编辑  end*/
+
+/*基金产品编辑  start*/
+.product_editor .layui-form-item{margin-bottom:5px;}
+.product_editor .manageFee{letter-spacing: 4.7px;}
+.product_editor .remark{letter-spacing: 7px;}
+.product_editor .addAccount{background-color: #1E9FFF;height: 38px;line-height: 38px;padding: 0 18px;color: #fff;white-space: nowrap;text-align: center;font-size: 14px;border: none;border-radius: 2px;cursor: pointer;}
+.product_editor .addAccount:hover {opacity: .8;filter: alpha(opacity=80);color: #fff;}
+.product_editor .collectMain{padding-top:15px;}
+.product_editor .collectBank{color:#333;font-weight: bold;padding-right:20px;font-size:16px;}
+.product_editor .collectHead{display:flex;align-items: center;}
+.product_editor .layui-table th,.layui-table td{text-align:center !important;padding:10px 15px !important;}
+.product_editor .layui-table input{height:25px;width:100%;}
+.product_editor .layui-table a{color:#179AEE;}
+.product_editor .layui-table a:hover{opacity: .8;filter: alpha(opacity=80);}
+.product_editor .layui-table a.shanchu()
+/*基金产品编辑  end*/
